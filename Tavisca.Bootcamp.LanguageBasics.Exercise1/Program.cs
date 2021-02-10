@@ -21,10 +21,9 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
         }
 
    
-        public static int FindDigit(string equation)
+         public static int FindDigit(string equation)
         {
                          // string equation = "42*47=1?74";
-            //throw new NotImplementedException();
             int equationlength = equation.Length;
                          // cout << equationlength;
             int OperatorM=-1, Equalto=-1, QuestionM=-1;
@@ -76,6 +75,10 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
                 {
                     return 0;
                 }
+                 if(C%B!=0)
+                {
+                    return -1;
+                }
                 int ActualResult = C / B;
                 string ActualResultString = ActualResult.ToString();
 
@@ -102,9 +105,13 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
             //work on A and C
                 A = ConvertInt(equation, 0, OperatorM);
                 C = ConvertInt(equation, Equalto, equationlength);
-                if (A == 0)
+                if (A == 0 )
                 {
                     return 0;
+                }
+                if(C%A!=0)
+                {
+                    return -1;
                 }
                 int ActualResult = C / A;
                 string ActualResultString = ActualResult.ToString();
